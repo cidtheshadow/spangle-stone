@@ -53,9 +53,33 @@
       </button>
 
       <!-- Mobile Menu Trigger -->
-      <button class="lg:hidden text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <button id="mobile-menu-open" class="lg:hidden text-white hover:text-luxury-gold transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="fixed inset-0 bg-luxury-green z-[150] translate-x-full transition-transform duration-500 lg:hidden flex flex-col p-8">
+        <div class="flex justify-between items-center mb-16">
+          <div class="text-2xl font-serif tracking-[0.2em] font-bold text-white">
+            SPANGLE <span class="text-luxury-gold italic font-light">STONE</span>
+          </div>
+          <button id="mobile-menu-close" class="text-white hover:text-luxury-gold transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        
+        <nav class="flex flex-col gap-8">
+          <a href="#about" class="mobile-nav-link text-2xl font-serif text-white hover:text-luxury-gold transition-colors">Heritage</a>
+          <a href="#suites" class="mobile-nav-link text-2xl font-serif text-white hover:text-luxury-gold transition-colors">Luxury Suites</a>
+          <a href="#dining" class="mobile-nav-link text-2xl font-serif text-white hover:text-luxury-gold transition-colors">Culinary Art</a>
+          <a href="#events" class="mobile-nav-link text-2xl font-serif text-white hover:text-luxury-gold transition-colors">Gatherings</a>
+          <a href="#contact" class="mobile-nav-link text-2xl font-serif text-white hover:text-luxury-gold transition-colors">Bespoke Location</a>
+        </nav>
+
+        <button class="mt-auto bg-luxury-gold text-white w-full py-5 text-sm uppercase font-bold tracking-[0.34em]">
+          Bespoke Reservation
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section -->

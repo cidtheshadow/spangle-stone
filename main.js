@@ -40,15 +40,39 @@ window.addEventListener('scroll', () => {
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
+// mobile Menu Logic
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuOpen = document.getElementById('mobile-menu-open');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+const toggleMenu = (show) => {
+  if (show) {
+    mobileMenu.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobileMenu.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  }
+};
+
+mobileMenuOpen.addEventListener('click', () => toggleMenu(true));
+mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+
 // Smooth Scroll for Navigation Links
-document.querySelectorAll('.nav-link').forEach(link => {
+document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const targetId = link.getAttribute('href');
     const targetElement = document.querySelector(targetId);
+    
+    if (link.classList.contains('mobile-nav-link')) {
+      toggleMenu(false);
+    }
+
     if (targetElement) {
+      const offsetTop = targetElement.offsetTop;
       window.scrollTo({
-        top: targetElement.offsetTop,
+        top: offsetTop - 80, // Adjust for fixed header
         behavior: 'smooth'
       });
     }
